@@ -60,6 +60,21 @@ dimensions and gets the full drawing package: checked, consistent and ready for 
 
 ## 🧭 Product tour
 
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screens/dashboard.jpg" alt="Company operations panel"><br><sub><b>Company operations panel</b>: ready outputs, active drawings, part requests and remaining drawing rights at a glance</sub></td>
+    <td width="50%"><img src="docs/screens/new-drawing.jpg" alt="Drawing workspace"><br><sub><b>Drawing workspace</b>: pick a module and an approved part set, enter the cabin dimensions, preview, then generate</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screens/outputs.jpg" alt="Drawing outputs"><br><sub><b>Drawing outputs</b>: every generated package with status, reference code and download</sub></td>
+    <td width="50%"><img src="docs/screens/library.jpg" alt="Part library"><br><sub><b>Part library</b>: the company's own production ready sets, approved by engineering</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screens/modules.jpg" alt="Modules"><br><sub><b>Modules</b>: suspension, counterweight frame and cabin modules, with planned ones on the roadmap</sub></td>
+    <td width="50%" valign="middle"><sub>Screens are from a demo workspace with sample data, shown in the English interface.<br>Generated drawings are not shown here: each one is built from a manufacturer's own part templates.</sub></td>
+  </tr>
+</table>
+
 ### For the manufacturer's team
 
 - **Drawing workspace**: module, set, dimensions, live preview and download in one guided flow; works on desktop, tablet and phone
