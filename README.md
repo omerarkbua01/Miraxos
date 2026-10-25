@@ -1,72 +1,92 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Miraxos — case study" width="100%">
+  <img src="docs/banner.png" alt="Miraxos — parametric CAD automation for elevator cabin manufacturing" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://miraxos.com"><img src="https://img.shields.io/badge/live-miraxos.com-0068d9?style=flat-square" alt="Live"></a>
+  <img src="https://img.shields.io/badge/type-B2B%20SaaS-0b1f3a?style=flat-square" alt="B2B SaaS">
+  <img src="https://img.shields.io/badge/industry-elevator%20manufacturing-0b1f3a?style=flat-square" alt="Industry">
+  <img src="https://img.shields.io/badge/source-closed-6b7280?style=flat-square" alt="Closed source">
 </p>
 
 # Miraxos
 
-**Miraxos** is a SaaS for elevator cabin manufacturers. Enter the cabin and car-frame dimensions — Miraxos generates the
-laser-ready DXF part drawings and the work order together, in a single package.
-It is live at **[miraxos.com](https://miraxos.com)** and used in production by manufacturers in Türkiye.
+**Miraxos turns one set of elevator cabin dimensions into a complete, production-ready drawing package** — laser-ready DXF
+part files and a work order — in minutes, from the browser.
 
-> Miraxos is a commercial, closed-source product. This repository contains no source code — only this overview.
+It is a commercial B2B SaaS, live at **[miraxos.com](https://miraxos.com)** and used in production by elevator manufacturers
+in Türkiye.
+
+> This repository is a case study. Miraxos is closed source — there is no code here.
+
+---
+
+## 🏭 The problem
+
+Elevator manufacturing is made to order. Every building has its own shaft, so every order needs its own cabin and car frame —
+and every one of those is dozens to hundreds of sheet-metal parts that have to be drawn, dimensioned and sent to the laser.
+
+Most manufacturers still do this by hand in CAD, order after order. It is slow, it ties up skilled engineers with repetitive
+work, and a single wrong dimension can go unnoticed until the steel is already cut.
+
+## 💡 The solution
+
+Miraxos captures a manufacturer's own parts and design rules **once**. After that, anyone on the team enters the order's
+dimensions and gets the full drawing package — checked, consistent and ready for production.
+
+| Step | What happens |
+|---|---|
+| **1 · Choose a module** | Car frames and cabins from one catalog — suspension, side or rear counterweight, electric cabin and more |
+| **2 · Choose the production set** | The manufacturer's own approved parts |
+| **3 · Enter the dimensions** | Cabin width and depth, rail distances, door and panel options |
+| **4 · Live preview** | The drawing is generated instantly; if a dimension can't be produced, Miraxos shows the valid range instead of failing |
+| **5 · Download** | One package: laser-ready DXF files plus a work-order PDF — parts grouped by sheet thickness and matched to balloon numbers on the drawing |
+
+**Reported results:** ~95 % less drawing time · under 2 minutes average output time.
 
 ---
 
 ## 👤 My role
 
-**Founder & product builder.**
+**Founder & product builder** — from the first idea to paying customers.
 
-- Product vision, roadmap and priorities
-- Domain model of cabin and car-frame parts, built together with a mechanical-engineering partner
-- Architecture and quality decisions — what "done" means, how every change is verified before release
-- Customer onboarding: preparing each manufacturer's templates and validating the first outputs with them
-- Release management: staging → production
-
----
-
-## 🎬 See it in action
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="docs/miraxos-demo.mp4"><img src="docs/launch.png" alt="Miraxos product demo"></a>
-      <p><b>Product demo</b> (64 s, Turkish) — module → set → dimensions → preview → work order → download</p>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/miraxos-1100x1400.mp4"><img src="docs/dimensions.png" alt="One set of dimensions"></a>
-      <p><b>1100 × 1400</b> (22 s, Turkish) — one set of dimensions, a full set of parts</p>
-    </td>
-  </tr>
-</table>
+- **Product:** vision, roadmap and priorities; every feature's definition of done
+- **Domain:** modelling cabin and car-frame parts together with a mechanical-engineering partner
+- **Architecture & quality:** the decisions behind the system and the verification bar every change has to pass before release
+- **Customers:** onboarding manufacturers, preparing their templates and validating the first outputs with them
+- **Operations:** release management (staging → production), monitoring and incident response
 
 ---
 
-## ⚙️ How it works
+## 🧭 Product tour
 
-1. **Choose a module** — car frames and cabins from a single catalog (e.g. 1-1 suspension, 2-1 side/rear counterweight, electric cabin)
-2. **Choose the production set** — the manufacturer's own parts, approved by their engineer
-3. **Enter the dimensions** — cabin width/depth, rail distances, door and panel options
-4. **Preview** — the drawing is generated live; if a dimension can't be produced, Miraxos tells you the valid range instead of failing
-5. **Download** — one ZIP with laser-ready DXF files and a work-order PDF: parts grouped by thickness, matched to balloon numbers on the drawing
+<!-- SCREENS -->
 
-<p align="center"><img src="docs/preview.png" alt="Live preview" width="80%"></p>
+### For the manufacturer's team
 
----
+- **Drawing workspace** — module, set, dimensions, live preview and download in one guided flow; works on desktop, tablet and phone
+- **Drawing outputs** — the history of every package, with downloads
+- **Part library & part requests** — the company's own parts; new parts are requested, reviewed and approved before they can be used
+- **Company workspace** — team members, roles, invitations and team activity
+- **Plan & billing** — plan, drawing quota and usage
+- **Support center & inbox** — tickets and announcements in one place
+- **Turkish and English** — the whole customer interface is bilingual
 
-## ✨ Product highlights
+### Built-in safeguards
 
-| | |
+| Safeguard | Why it matters |
 |---|---|
-| **Company-specific catalogs** | Parts and ceiling patterns belong to one manufacturer; a catalog is never visible to another company |
+| **Company-specific catalogs** | A manufacturer's parts and ceiling patterns are never visible to another company |
 | **Engineer approval** | Every uploaded DXF part is reviewed; an unapproved part can't appear in any set |
 | **Publishing gate** | A set is actually produced with trial dimensions before it can go live — a set that can't be produced isn't published |
 | **Range suggestions** | When dimensions don't fit, the user gets the valid ranges, not just an error |
-| **No installation** | Runs in the browser — desktop, tablet and phone; no CAD license or powerful computer needed |
-| **12+ drawing modules** | 5 active today, 7 more opened on customer request |
+| **Rules as data** | A manufacturer's parts and rules are configured as data in an internal studio, so onboarding a new manufacturer is mostly configuration, not code |
 
-**Results reported on miraxos.com:** ~95 % less drawing time · under 2 minutes average output time.
+### Operations console
 
-<p align="center"><img src="docs/devices.png" alt="Desktop, tablet and phone" width="80%"></p>
+An internal console runs the service: drawing-job monitoring, preview diagnostics, part-request workflow, system health with
+incident management and on-call escalation, an audit log of administrative actions, and mandatory two-factor authentication
+for administrators.
 
 ---
 
@@ -76,7 +96,7 @@ It is live at **[miraxos.com](https://miraxos.com)** and used in production by m
 flowchart LR
     U[Browser · desktop / tablet / phone] --> W[Web app · Next.js + TypeScript]
     W --> DB[(PostgreSQL · Supabase)]
-    W -- preview --> E[Drawing engine · Python]
+    W -- live preview --> E[Drawing engine · Python]
     W -- production job --> Q[Job queue]
     Q --> K[Worker · Node.js]
     K --> E
@@ -84,18 +104,20 @@ flowchart LR
     F --> S[(File storage)]
 ```
 
-**Numbers (measured October 2026)**
+**By the numbers (measured October 2026)**
 
-- **19,000+ automated tests** — including golden-file regression tests that compare generated drawings against approved reference outputs
-- **338 database migrations**, each verified on a local copy before it reaches staging and production
-- **1,600+ commits** since July 2026
+| | |
+|---|---|
+| Automated tests | **19,000+** — including golden-file regression tests that compare generated drawings against approved reference outputs |
+| Database migrations | **338**, each rehearsed on a local copy before staging and production |
+| Commits | **1,600+** since July 2026 |
 
-**Practices**
+**How it's built**
 
 - Multi-tenant by design — each manufacturer's data, parts and catalog are kept separate
-- Safeguards are verified by *deliberately breaking them*: a protection only counts once the test that guards it is seen failing
+- Safeguards are verified by *deliberately breaking them*: a protection only counts once its test has been seen failing
 - Staging → production release pipeline, error tracking and uptime monitoring
-- Screens checked on 6 screen sizes × light and dark themes; customer-facing UI in Turkish and English
+- Screens checked on 6 screen sizes in light and dark themes
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -106,6 +128,23 @@ flowchart LR
 
 ---
 
-### 📫 Contact
+## 🎬 Product films (Turkish)
 
-Interested in Miraxos for your production? **[miraxos.com](https://miraxos.com)** · [omerarkbua01@gmail.com](mailto:omerarkbua01@gmail.com)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/miraxos-demo.mp4"><img src="docs/launch.png" alt="Miraxos product demo"></a>
+      <p><b>Product demo</b> · 64 s — module → set → dimensions → preview → work order → download</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/miraxos-1100x1400.mp4"><img src="docs/dimensions.png" alt="One set of dimensions"></a>
+      <p><b>1100 × 1400</b> · 22 s — one set of dimensions, a full set of parts</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+<p align="center">
+  <b><a href="https://miraxos.com">miraxos.com</a></b> · <a href="mailto:omerarkbua01@gmail.com">omerarkbua01@gmail.com</a>
+</p>
